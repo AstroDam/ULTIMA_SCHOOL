@@ -100,12 +100,25 @@ for zero ou negativo.'''
 #print ('soma: ', somatorio(a,b,c)) 
 #print ('media: ', media_somatorio (a,b,c))
 
-#exercio 6
-cont = 0
-palavra = input('digite uma palavra: ')
-for batata in palavra : 
-    cont +=1
-print (cont)
+'''exercio 6
+#cont = 0
+#palavra = input('digite uma palavra: ')
+#for batata in palavra : 
+#    cont +=1
+#print (cont)
+
+def Qualtamanho(x):
+    n = str(x)
+    if len(n) > 1:
+        if n[0] == '0':
+            return len(n) - 1
+        else:
+            return len(n)
+    return len(n)
+
+
+num = int(input("Digite um número: "))
+print(Qualtamanho(num))'''
 
 
 # exerecio 7
@@ -121,3 +134,24 @@ print (cont)
 #n1 = int(input('insira uma valor: '))   
 
 #positivo_negativo (n1)
+
+#exercicio 5
+
+def fibonacci(n, ultimo, penultimo, termo): 
+    if (n==1) or (n==2):
+        print("1")
+    else:
+        cont=0
+    while cont < n:
+        print (' >', termo, end='')
+        termo = ultimo + penultimo
+        penultimo = ultimo
+        ultimo = termo
+        cont += 1
+    print(' > FIM') 
+
+n = int(input("Quantos termos você quer encontrar: "))
+ultimo=0
+penultimo=1
+termo=0
+fibonacci(n, ultimo, penultimo, termo)
