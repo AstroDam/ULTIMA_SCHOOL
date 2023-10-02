@@ -137,7 +137,7 @@ print(Qualtamanho(num))'''
 
 #exercicio 5
 
-def fibonacci(n, ultimo, penultimo, termo): 
+'''def fibonacci(n, ultimo, penultimo, termo): 
     if (n==1) or (n==2):
         print("1")
     else:
@@ -154,4 +154,5 @@ n = int(input("Quantos termos você quer encontrar: "))
 ultimo=0
 penultimo=1
 termo=0
-fibonacci(n, ultimo, penultimo, termo)
+fibonacci(n, ultimo, penultimo, termo)'''
+

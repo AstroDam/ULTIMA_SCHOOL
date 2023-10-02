@@ -36,24 +36,16 @@ class Pessoa:
 cliente = Pessoa('daniel')
 cliente.welcome() """
 
-class Pessoa:
-    def __init__ (self):
-        self.nome = None
-        self.idade = None
+# class Pessoa:
+#     def __init__ (self):
+#         self.nome = None
+#         self.idade = None
         
-    def cadastro(self):
-        self.nome = input("Digite o seu nome")
-        self.idade = int(input("informe sua idade: "))
+#     def cadastro(self):
+#         self.nome = input("Digite o seu nome")
+#         self.idade = int(input("informe sua idade: "))
         
-    def welcome(self):
-        print(f"you are welcome, {self.nome} ({self.idade})")
-meus_clientes = [] #armazenar clientes    
-for iteracao in range(3):
-    cliente = Pessoa()
-    cliente.cadastro()
-    meus_clientes.append(cliente)
-
-meus_clientes[0].welcome()
-meus_clientes[1].welcome()
+#     def welcome(self):
+#         print(f"you are welcome, {self.nome} ({self.idade})")
 
 '''perguntar sobre o singleton e command, adapter, strategy, facade,'''
