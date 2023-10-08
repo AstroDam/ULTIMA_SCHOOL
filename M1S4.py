@@ -22,72 +22,36 @@ Saída do seu programa:
 Você deve mostrar a seguinte mensagem para cada cliente: print("Cliente:", cliente["Nome"], "CPF:", cliente["CPF"], "Idade:", cliente["Idade"])
 Por exemplo: Cliente: John Snow CPF: 963.125.345-78 Idade: 24
 Mostre os cinco clientes, um após o outro.'''''
-
+# criando a classe
 class Clientes:
-    def __init__(self, nome=None, cpf=None, idade=None):
-        self.__nome = nome
-        self.__cpf = cpf
-        self.__idade= idade
+    def init(self):
+        self.nome = None
+        self.cpf = None
+        self.idade = None
 
-    @property
-    def nome(self):
-        return self.__nome
-  
-    @nome.setter
-    def nome(self, novo_nome):
-        self.__nome = novo_nome       
- 
-    @property
-    def cpf(self):
-        return self.__cpf
-  
-    @cpf.setter
-    def cpf(self, novo_cpf):
-        self.__cpf = novo_cpf  
-        
-    @property
-    def idade(self):
-        return self.__idade
+    def cadastrar(self):
+        self.nome = input('informe o seu nome: \n')
+        self.cpf = input('Digite os 11 digitos do seu CPF: \n')
+        self.idade = int(input('informe sua idade: \n'))
 
-    @idade.setter
-    def idade(self, nova_idade):
-        self.__idade = nova_idade  
-    
-    def __str__(self):
-        return f'A Pessoa - {self.__nome} com CPF: {self.__cpf} tem {self.__idade} anos'
+    def apresentar(self): # exibindo os dados do cliente
+       print(f'Nome: {self.nome} \nIdade: {self.idade} \nCPF: {self.cpf} \n')
 
-cadastro = []
+#Começa aqui
+print ('OLÁ, SEJA BEM VINDO A AREA DO CLIENTE')
 
-for i in range(1,6,1):
-    
-    pessoa = input('digite seu nome: ') 
-    numcpf = input ('digite o seu CPF : ')
-    age = input('digite sua idade: ') 
-    
-    ncpf = Clientes(str(pessoa),str(numcpf),str(age))
-
-    cadastro.append(ncpf)
-        
-for programa in cadastro:
-    print (programa)
-
-# while True:
-    
-#     pessoa = input('digite seu nome: ') 
-#     numcpf = input ('digite o seu CPF : ')
-#     age = input('digite sua idade: ') 
-    
-#     ncpf = Clientes(str(pessoa),str(numcpf),str(age))
-
-#     cadastro.append(ncpf)
-        
-#     if pessoa == '':
-#         break
-    
-# for programa in cadastro:
-#     print (programa)
-    
-        
-    
-   
+clientes = [] #criou lista para armazenar clientes
+while True:
+    toque = input('(1) Cadastre-se \n(2) Exiba seus dados \n(3) SAIR \n') #cria mnenu fora da classe, porque dentro da classe iria ficar sobrescrevendo os dados da classe
+    if toque == '1':
+        novo = Clientes() #instancia de objeto dentro do do 'if' para criar novos objetos sempre que houver novo cadastro
+        novo.cadastrar() #chama o método cadastrar 
+        clientes.append(novo) # adiciona o novo cadastro dentro da lista CLIENTES que criada fora do while
+    elif toque == '2':
+        for cliente in clientes: # for para rodar todos o clientes armazenados na lista
+            cliente.apresentar() #chama o métodos para apresentar
+    elif toque == '3':
+        break
+    else:
+        print("Opção inválida!")
 
